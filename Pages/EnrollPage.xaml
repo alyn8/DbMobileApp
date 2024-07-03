@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DbMyDemo.EnrollPage"
+             Title="EnrollPage">
+    <StackLayout>
+       
+
+        <Picker x:Name="StudentPicker" Title="Select Student" >
+            <Picker.ItemDisplayBinding>
+                <Binding Path="Name"/>
+            </Picker.ItemDisplayBinding>
+        </Picker>
+
+
+
+        <Picker x:Name="CoursePicker" Title="Select Course" >
+            <Picker.ItemDisplayBinding>
+                <Binding Path="Name"/>
+            </Picker.ItemDisplayBinding>
+        </Picker>
+        <Button x:Name="Btn_Enroll_Add" Text="Enroll" Clicked="Btn_Enroll_Add_Clicked"/>
+        <ScrollView>
+            <ListView x:Name="Enroll_List_View" SelectedItem="{Binding SelectedEnrollment, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10" Spacing="20">
+                                <Label Text="{Binding StudentID}"/>
+                                <Label Text="{Binding CourseID}"/>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+        <Button x:Name="DeleteButton" Text="Delete" CommandParameter="{Binding EnrollID}" Clicked="Button_Clicked" IsVisible="False"/>
+    </StackLayout>
+</ContentPage>

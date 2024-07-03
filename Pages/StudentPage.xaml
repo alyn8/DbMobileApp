@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DbMyDemo.StudentPage"
+             Title="StudentPage" >
+    <StackLayout>
+
+        <Entry x:Name="stu_name" Placeholder="Name"/>
+        
+        <Entry x:Name="stu_dept" Placeholder="Department"/>
+
+        <Button x:Name="Btn_Stu_add" Text="ADD" Clicked="Btn_Stu_add_Clicked"/>
+       
+
+
+            <ListView x:Name="Stu_List_View" SelectedItem="{Binding SelectedStudent, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="10" Spacing="20" >
+                                
+                                <Label Text="{Binding ID}" VerticalOptions="Center"/>
+                                <Label Text="{Binding Name}" VerticalOptions="Center"/>
+
+                                <Label Text="{Binding Department}" VerticalOptions="Center"/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        
+        <Button x:Name="DeleteButton" Text="Delete" BindingContext="{Binding ID}" Clicked="Button_Clicked" VerticalOptions="Center" IsVisible="False"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DbMyDemo.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DbMyDemo"
+    Shell.FlyoutBehavior="Disabled"
+    Title="DbMyDemo" >
+
+    <TabBar>
+        <Tab Title="MainPage">
+            <ShellContent  ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        </Tab>
+
+
+        <Tab Title="StudentPage">
+            <ShellContent ContentTemplate="{DataTemplate local:StudentPage}" Route="StudentPage"/>
+        </Tab>
+        
+        
+        
+        <Tab Title="CoursePage">
+            <ShellContent  ContentTemplate="{DataTemplate local:CoursePage}" Route="CoursePage"/>
+        </Tab>
+        <Tab Title="Enroll Page">
+            <ShellContent  ContentTemplate="{DataTemplate local:EnrollPage}" Route="EnrollPage"/>
+        </Tab>
+
+
+
+    </TabBar>
+
+</Shell>
